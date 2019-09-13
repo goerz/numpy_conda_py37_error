@@ -1,0 +1,14 @@
+environment:
+
+  matrix:
+    - PYTHON: "C:\\Miniconda37-x64"
+
+install:
+  - "%PYTHON%\\python.exe -V"
+  - C:\Miniconda3-x64\\Scripts\\activate"
+  - conda install -c conda-forge -y numpy=1.17.1
+
+build: off
+
+test_script:
+  - "%PYTHON%\\python.exe -c \"import numpy; print(numpy.__version__)\""

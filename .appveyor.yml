@@ -1,0 +1,17 @@
+environment:
+
+  matrix:
+    - PYTHON: "C:\\Python37"
+      PYTHON_VERSION: 3.7
+      TOXENV: py37
+
+install:
+  - "%PYTHON%\\python.exe -V"
+  - "%PYTHON%\\python.exe -m pip install tox"
+  - "%PYTHON%\\python.exe -m pip freeze"
+  - C:\Miniconda3-x64\\Scripts\\activate"
+
+build: off
+
+test_script:
+  - "%PYTHON%\\python.exe -m tox -vv -e py37"
